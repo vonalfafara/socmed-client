@@ -3,7 +3,7 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="main-footer">
       <Container maxW="1200px">
         <Box p={4}>
           <Flex minWidth="max-content" justifyContent="center" gap="2">
