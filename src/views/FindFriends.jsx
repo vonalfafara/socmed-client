@@ -43,9 +43,8 @@ const FindFriends = () => {
 
   async function getUsers() {
     const response = await api.get(`/users?q=${search}`);
-    console.log(response);
-    // setUsers(response.data.data);
-    // setMeta(response.data.meta);
+    setUsers(response.data.data);
+    setMeta(response.data.meta);
   }
 
   return (
