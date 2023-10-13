@@ -28,6 +28,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Header = () => {
+  const imageLink = import.meta.env.VITE_API;
   const toast = useToast();
   const navigate = useNavigate();
   const api = http({
