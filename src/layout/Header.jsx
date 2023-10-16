@@ -38,6 +38,10 @@ const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
+    async function getCsrf() {
+      await api.get(`${import.meta.env.VITE_ROOT}/sanctum/csrf-cookie`);
+    }
+    getCsrf();
     getFrs();
     return () => {};
   }, []);

@@ -9,6 +9,7 @@ function http(options = {}) {
   return axios.create({
     baseURL: import.meta.env.VITE_API,
     headers,
+    withCredentials: true,
   });
 }
 

@@ -12,7 +12,7 @@ import {
   FormErrorMessage,
   useToast,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import http from "../lib/http";
 
@@ -27,6 +27,14 @@ const Login = () => {
     email: [],
     password: [],
   });
+
+  useEffect(() => {
+    async function getCsrf() {
+      await api.get(`${import.meta.env.VITE_ROOT}/sanctum/csrf-cookie`);
+    }
+    getCsrf();
+    return () => {};
+  }, []);
 
   async function login() {
     try {
