@@ -29,10 +29,6 @@ const Login = () => {
   });
 
   useEffect(() => {
-    async function getCsrf() {
-      await api.get(`${import.meta.env.VITE_ROOT}/sanctum/csrf-cookie`);
-    }
-    getCsrf();
     return () => {};
   }, []);
 
